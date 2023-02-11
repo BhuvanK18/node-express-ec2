@@ -1,16 +1,16 @@
 // including the requirements
 const express = require("express");
-const res = require("express/lib/response");
 const path = require("path");
 const app = express();
-const hbs = require("hbs");
+
+
 // Use of bcryt with highly secure authentication process
 const bcrypt = require("bcryptjs");
 
+// Creating the clusters
 const Register = require("./models/registers");
 const Recipe = require("./models/recipe");
 
-const async = require("hbs/lib/async");
 
 const port = process.env.PORT || 3000;
 
@@ -65,7 +65,7 @@ app.post("/register", async (req, res) => {
             pswd: passwordHash,
 
         })
-        const registered = await registerUser.save();
+        // const registered = await registerUser.save();
         res.status(201).render("home");
 
 
